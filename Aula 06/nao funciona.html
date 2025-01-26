@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>Jogo javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Open Sans';
+        }
+        piece {
+            width: 80px; height: 80px;
+            position: absolute; border-radius: 40px; border: dotted 1px black;
+            opacity: .8;
+        }
+            piece:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="border-bottom pb-2 mb-2"><h2>O meu joguinho ... <i class="fa fa-smile-o"></i></h2></div>
+        <button onclick="scramble()" class="btn btn-primary">Baralhar</button>
+        <span id="currentInfo"></span>
+        <piece id="azul" class="bg-primary" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="vermelho" class="bg-danger" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="verde" class="bg-success" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+        <piece id="amarelo" class="bg-warning" onmouseover="setCurrentDiv()" onmouseout="clearSelected()"></piece>
+    </div>
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    /* Baralha as peças */
+        function scramble() {
+            var largura = window.innerWidth;
+            var altura = window.innerHeight;
+    /* Azul */
+            azul.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            azul.style.left = Math. (Math.random() * (largura - 80)).toString() + "px";
+            console.log("Azul: " + azul.style.top + " / " + azul.style.left);
+    /* Vermelho */
+            vermelho.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            vermelho.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Vermelho: " + vermelho.style.top + " / " + vermelho.style.left);
+    /* Verde */
+            verde.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            verde.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Verde: " + verde.style.top + " / " + verde.style.left);
+    /* Amarelo */
+            amarelo.style.top = Math.floor(Math.random() * (altura - 80)).toString() + "px";
+            amarelo.style.left = Math.floor(Math.random() * (largura - 80)).toString() + "px";
+            console.log("Amarelo: " + amarelo.style.top + " / " + amarelo.style.left);
+        }
+    /* Deteta qual a peça que foi "tocada" */
+        function setCurrentDiv() {
+    //var x = event.target.tagName;
+            document.getElementById("currentInfo").innerHTML = "<p>Olá! Eu sou o " + event.target.id + "<br />" +
+                "top: " + event.target.style.top + "<br>left: " + event.target.style.left + "</p>";
+        }
+        function clearSelected() {
+        document.getElementById("currentInfo").innerText = "";
+        }
+    /* Quando o jogo começa, baralha de imediato as peças */
+        window.onload = scramble;
+    </script>
+</body>
+</html>

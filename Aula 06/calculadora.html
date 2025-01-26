@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Calculadora</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, select, button { margin: 5px; padding: 10px; font-size: 16px; }
+        select:focus {
+            background-color: lightgray;
+            outline: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="number" id="x" placeholder="Primeiro Número">
+    <select id="operacao">
+        <option value="soma">Soma</option>
+        <option value="subtracao">Subtração</option>
+        <option value="multiplicacao">Multiplicação</option>
+        <option value="divisao">Divisão</option>
+        <option value="resto">Resto da Divisão</option>
+        <option value="fatorial">Fatorial (do 1º número)</option>
+    </select>
+    <input type="number" id="y" placeholder="Segundo Número">
+    <button onclick="calcular()">Calcular</button>
+    <h3>Resultado: <span id="resultado"></span></h3>
+
+    <script>
+        function calcular() {
+            const x = parseFloat(document.getElementById('x').value);
+            const y = parseFloat(document.getElementById('y').value);
+            const operacao = document.getElementById('operacao').value;
+            let resultado;
+
+            switch (operacao) {
+                case 'soma':
+                    resultado = x + y;
+                    break;
+                case 'subtracao':
+                    resultado = x - y;
+                    break;
+                case 'multiplicacao':
+                    resultado = x * y;
+                    break;
+                case 'divisao':
+                    if (y !== 0) {
+                        resultado = x / y;
+                    } else {
+                        resultado = 'Erro: Divisão por zero';
+                    }
+                    break;
+                case 'resto':
+                    if (y !== 0) {
+                        resultado = x % y;
+                    } else {
+                        resultado = 'Erro: Divisão por zero';
+                    }
+                    break;
+                case 'fatorial':
+                    resultado = fatorial(x);
+                    break;
+                default:
+                    resultado = 'Operação inválida';
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+
+        function fatorial(n) {
+            if (n < 0) return 'Erro: Número negativo';
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

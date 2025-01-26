@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <title>Calculadora</title>
+        <style>
+            .container {
+                display:table;
+                grid-gap: 10px;
+                padding: 10px;
+                border: 1px solid black;
+                margin: 0 auto;
+                text-align: center;
+            }
+            button {
+                width: 100px;
+                height: 100px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Calculadora</h1>
+        <div class="container"style="text-align: center;"></div>
+            <input type="text" id="display" value="0" style="width:400px;height: 50px; font-size: 20px;" readonly>
+            <br>
+            <button id="1" value="1" onclick="addNumber(event)"> 1</button>
+            <button id="2" value="2" onclick="addNumber(event)"> 2</button>
+            <button id="3" value="3" onclick="addNumber(event)"> 3</button>
+            <button id="+" value="+" onclick="addOp(operacao)"> +</button>
+            <br>
+            <button id="4" value="4" onclick="addNumber(event)"> 4</button>
+            <button id="5" value="5" onclick="addNumber(event)"> 5</button>
+            <button id="6" value="6" onclick="addNumber(event)"> 6</button>
+            <button id="-" value="-" onclick="addOp(operacao)"> -</button>
+            <br>
+            <button id="7" value="7" onclick="addNumber(event)"> 7</button>
+            <button id="8" value="8" onclick="addNumber(event)"> 8</button>
+            <button id="9" value="9" onclick="addNumber(event)"> 9</button>
+            <button id="*" value="*" onclick="addOp(operacao)">*</button>
+            <br>
+            <button id="0" value="0" onclick="addNumber(event)"> 0</button>
+            <button id="C" value="C" onclick="clear()"> C</button>
+            <button id="=" value="=" onclick="result()"> =</button>
+            <button id="/" value="/" onclick="addOp(operacao)"> /</button>
+        </div>
+        <script src="calculadora.js"></script>
+    </body>
+</html>

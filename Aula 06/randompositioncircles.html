@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo dos Círculos</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Usar 100vh para ocupar toda a altura da janela */
+            margin: 0; /* Remover margens do body */
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            position: relative; /* permite o uso de posições absolutas dentro */
+            width: 90vw; /* largura do container adaptável ao viewport */
+            height: 90vh; /* altura do container adaptável ao viewport */
+            border: 2px solid #ccc; /* borda para visualizar o container */
+            padding: 20px; /* adicionar um pouco de espaço interno */
+            overflow: hidden; /* impede que círculos saiam do container */
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.2s;
+            position: absolute; /* permite posicionar os círculos em locais fixos */
+        }
+
+        .circle:hover {
+            transform: scale(1.1);
+        }
+
+        #info {
+            margin-top: 20px; /* Ajustado para ficar logo abaixo do container */
+            font-size: 1.2em;
+            text-align: center; /* Centraliza o texto */
+        }
+
+        #shuffleButton {
+            margin-top: 20px; /* Espaço entre o botão e os círculos */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="circle" id="red" style="background-color: red;"></div>
+        <div class="circle" id="blue" style="background-color: blue;"></div>
+        <div class="circle" id="yellow" style="background-color: yellow;"></div>
+        <div class="circle" id="green" style="background-color: green;"></div>
+        <button id="shuffleButton">Baralhar</button>
+    </div>
+    <div id="info"></div>
+    <script>
+        const circles = document.querySelectorAll('.circle');
+        const shuffleButton = document.getElementById('shuffleButton');
+        const infoDiv = document.getElementById('info');
+
+        function getRandomPosition(container, element) {
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+            const elementWidth = element.offsetWidth;
+            const elementHeight = element.offsetHeight;
+
+            // Calcula os limites para as coordenadas aleatórias
+            const maxX = containerWidth - elementWidth;
+            const maxY = containerHeight - elementHeight - shuffleButton.offsetHeight; // Considera a altura do botão
+
+            // Gera coordenadas aleatórias
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            return {
+                left: `${randomX}px`,
+                top: `${randomY}px`
+            };
+        }
+
+        function shuffleCircles() {
+            circles.forEach(circle => {
+                const position = getRandomPosition(document.getElementById('container'), circle);
+                Object.assign(circle.style, position);
+            });
+        }
+
+        circles.forEach(circle => {
+            circle.addEventListener('mouseover', (event) => {
+                const circleName = event.target.id.charAt(0).toUpperCase() + event.target.id.slice(1);
+                const position = event.target.getBoundingClientRect();
+                infoDiv.innerHTML = `Nome: ${circleName} <br> Posição: (X: ${position.x.toFixed(2)}, Y: ${position.y.toFixed(2)})`;
+            });
+
+            circle.addEventListener('mouseout', () => {
+                infoDiv.innerHTML = '';
+            });
+        });
+
+        shuffleButton.addEventListener('click', shuffleCircles);
+    </script>
+</body>
+</html>

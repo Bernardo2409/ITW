@@ -1,0 +1,127 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <h3>Formulário</h3>
+        <form class="row g-3 needs-validation" novalidate action="http://192.168.160.36/FormEcho.aspx" method="post">
+            <div class="col-md-4 form-floating">
+                <input type="text" class="form-control" name="FirstName" id="validationCustom01" value="" pattern=".{3,}" required>
+                <label for="validationCustom01" class="form-label">Nome</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Insira o primeiro nome. (Mínimo, 3 carateres)</div>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input type="text" class="form-control" name="LastName" id="validationCustom02" value="" pattern=".{3,}" required>
+                <label for="validationCustom02" class="form-label">Sobrenome</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Insira o último nome. (Mínimo, 3 carateres)</div>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input type="email" class="form-control" name="Username" id="validationCustomUsername" required>
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Insira um email válido.</div>
+            </div>
+            <div class="col-md-3 form-floating">
+                <input type="text" name="City" class="form-control" id="validationCustom03" pattern="[A-Z,a-z]{3,}" required>
+                <label for="validationCustom03" class="form-label">Cidade</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Insira o nome de uma cidade (mínimo de 3 letras).</div>
+            </div>
+            <div class="col-md-3 form-floating">
+                <select class="form-select" name="State" id="validationCustom04" required>
+                    <option selected value="">Selecione um distrito</option>
+                    <option value="1">Beja</option>
+                    <option value="2">Évora</option>
+                    <option value="3">Santarém</option>
+                    <option value="4">Castelo Branco</option>
+                    <option value="5">Bragança</option>
+                    <option value="6">Portalegre</option>
+                    <option value="7">Guarda</option>
+                    <option value="8">Setúbal</option>
+                    <option value="9">Viseu</option>
+                    <option value="10">Faro</option>
+                    <option value="11">Vila Real</option>
+                    <option value="12">Coimbra</option>
+                    <option value="13">Leiria</option>
+                    <option value="14">Aveiro</option>
+                    <option value="15">Lisboa</option>
+                    <option value="16">Braga</option>
+                    <option value="17">Porto</option>
+                    <option value="18">Região Autónoma dos Açores</option>
+                    <option value="19">Viana do Castelo</option>
+                    <option value="20">Região Autónoma da Madeira</option>
+                </select>
+                <label for="validationCustom04" class="form-label">Distrito</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Selecione um distrito.</div>
+            </div>
+            <div class="col-md-3 form-floating">
+                <input type="text" name="Zip" class="form-control" id="validationCustom05" pattern="\d{4}[\-]\d{3}" required>
+                <label for="validationCustom05" class="form-label">Código Postal</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Introduza um código postal válido.</div>
+            </div>
+            <div class="col-md-3 form-floating">
+                <input type="number" class="form-control" max="75" min="18" id="validationNumber05" required>
+                <label for="validationNumber05" class="form-label">Idade</label>
+                <div class="invalid-feedback"><i class="fa fa-warning"></i> Introduza um número entre 18 e 75.</div>
+            </div>
+            <div class="col-md-4">
+                <div class="border-bottom my-2 py-2">Meio de transporte:</div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="transport" id="transport1">
+                    <label class="form-check-label" for="transport1">Carro</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="transport" id="transport2">
+                    <label class="form-check-label" for="transport2">Trotinete</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="transport" id="transport3">
+                    <label class="form-check-label" for="transport3">Bicicleta</label>
+                    <div class="invalid-feedback small"><i class="fa fa-warning"></i> Escolha, pelo menos, uma das opções.</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="border-bottom my-2 py-2">Escolha a cor da sua equipa:</div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="color" id="color1" required>
+                    <label class="form-check-label" for="color1">Amarelo</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="color" id="color2" required>
+                    <label class="form-check-label" for="color2">Roxo</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="color" id="color3" required>
+                    <label class="form-check-label" for="color3">Preto</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="radio" name="color" id="color4">
+                    <label class="form-check-label" for="color4">Castanho</label>
+                    <div class="invalid-feedback small"><i class="fa fa-warning"></i> Escolha uma das opções.</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" name="InvalidCheck" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">Concordo com os Termos e Condições.</label>
+                    <div class="invalid-feedback"><i class="fa fa-warning"></i> Tem de concordar com os Termos e Condições antes de submeter o formulário.</div>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-save"></i> Enviar Formulário</button>
+                <button class="btn btn-danger btn-sm" type="reset"><i class="fa fa-trash-o"></i> Limpar Formulário</button>
+            </div>
+        </form>
+    </div>
+    <!-- Bootstrap Bundle -->
+    <script src="../lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Formulario.js"></script>
+</body>
+</html>
+

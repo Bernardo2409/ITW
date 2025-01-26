@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript onmouseover event</title>
+    <style>
+        .image-container{
+            max-width: 300px;
+            max-height: 300px;
+            text-align: center;
+
+        } 
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 60px;
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="image-container"
+        onmouseover="this.firstElementChild.src='https://iheartcraftythings.com/wp-content/uploads/2021/04/Light-Bulb-DRAWING-%E2%80%93-STEP-10.jpg'" 
+        onmouseout="this.firstElementChild.src='https://iheartcraftythings.com/wp-content/uploads/2021/04/Light-Bulb-DRAWING-%E2%80%93-STEP-8.jpg'" >
+        <img src="https://iheartcraftythings.com/wp-content/uploads/2021/04/Light-Bulb-DRAWING-%E2%80%93-STEP-8.jpg" alt="Light Bulb">
+    </div>
+</body>
+</html>
