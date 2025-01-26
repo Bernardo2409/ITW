@@ -1,0 +1,16 @@
+{
+    "version": "1.0"
+    ,"defaultProvider":"cdnjs",
+    "libraries": [
+    {
+    "destination":
+    "wwwroot/lib/bootstrap/dist/",
+    "library": "bootstrap@5.3.3"
+    },
+    {
+    "destination":
+    "wwwroot/lib/font-awesome/dist",
+    "library": "font-awesome@4.7.0"
+    }
+]
+}

@@ -1,0 +1,29 @@
+body {font-family: 'Open Sans', sans-serif; font-size: 14px;margin: 0px;}
+ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333;}
+li {float: left; border-right: 1px solid #bbb;}
+    li:last-child { border-right: none; float: right; }
+    li a {display: block ; color:white; text-align: center; padding: 14px 16px; text-decoration:dotted ;}
+        li a:hover:not(.active) {background-color: #999;}
+        li a.active:hover {color: #444; }
+    .active {background-color: rgb(92, 142, 18);}
+    #banner { height: 400px; background-position: center center; background-size: cover;
+        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5298bac0-b8bf-4c80-af67-725c1272dbb0/dfofa64-a781db38-63d9-4771-848f-5b2e3c212eb9.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUyOThiYWMwLWI4YmYtNGM4MC1hZjY3LTcyNWMxMjcyZGJiMFwvZGZvZmE2NC1hNzgxZGIzOC02M2Q5LTQ3NzEtODQ4Zi01YjJlM2MyMTJlYjkuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ohyZHc-HkkZ_Ta-vwbPzYOX6_dedFv7gDWbGe80vYFg');
+    }
+    #content { min-height: 200px; background-color: bisque; width: 75%; float: left;}
+    #advertising {min-height: 200px ; background-color: rgb(157, 157, 157); width: 25%; float: left;}
+    #footer {height: 200px; color: lightcyan; clear: both;}
+        .inner { width: 300px; margin: auto;}
+    @media screen and (min-width: 600px) {
+        body {font-size: 10px;}
+        #banner { height: 380px;}
+        .inner {width: 500px;}
+        }
+    @media screen and (min-width: 1024px) {
+        body {font-size: 14px;}
+        #banner {height: 480px;}
+        .inner {width: 980px;}
+        }
+        
+    
+
+
