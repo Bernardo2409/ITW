@@ -1,0 +1,12 @@
+﻿/* TODO: escrever o código em falta aqui... */
+
+body { font-family: 'Open Sans', sans-serif; font-size:14px; }
+.carousel-item {
+    height: 360px; 
+}
+.carousel-item img{
+    margin-left: -200px;
+}
+.text-adjust{
+   padding-top: 10px;
+}
